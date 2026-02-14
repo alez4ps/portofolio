@@ -1243,7 +1243,6 @@
   </style>
 </head>
 <body>
-  <!-- Navbar dengan menu toggle untuk mobile -->
   <nav class="navbar">
     <div class="logo">
       <div class="logo-icon"><i class="fas fa-code"></i></div>
@@ -1289,7 +1288,7 @@
     </div>
   </section>
 
-  <!-- Profile Section with Photo -->
+  <!-- Profile Section -->
   <div class="container" id="profile">
     <div class="profile-section appear">
       <div class="profile-image">
@@ -1417,7 +1416,7 @@
   <!-- Contact Section -->
   <section id="contact">
     <div class="container">
-      <div class="badge appear"><i class="fa-regular fa-paper-plane"></i> mari terhubung</div><br>
+      <div class="badge appear"><i class="fa-regular fa-paper-plane"></i> ayo berteman</div><br>
       <h2 class="appear">diskusi proyek?</h2>
       <div class="contact-flex">
         <a href="mailto:alezaandhika@gmail.com" class="contact-item appear">
@@ -1437,12 +1436,11 @@
   </section>
 
   <footer>
-    <p>© 2026 Aleza — portofolio dengan animasi di setiap sentuhan</p>
+    <p>© 2026 Aleza — portofolio</p>
   </footer>
 
   <script>
     (function() {
-      // Scroll reveal animation
       const appearElements = document.querySelectorAll('.appear');
       const observer = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
@@ -1453,7 +1451,6 @@
       }, { threshold: 0.2, rootMargin: '0px 0px -30px 0px' });
       appearElements.forEach(el => observer.observe(el));
 
-      // Mobile menu toggle
       const menuToggle = document.getElementById('menuToggle');
       const navLinks = document.getElementById('navLinks');
       
@@ -1471,7 +1468,6 @@
         });
       }
 
-      // Close menu when clicking a link
       document.querySelectorAll('.nav-links a').forEach(link => {
         link.addEventListener('click', () => {
           navLinks.classList.remove('show');
@@ -1481,21 +1477,18 @@
         });
       });
 
-      // Navbar scroll effect
       const navbar = document.querySelector('.navbar');
       let lastScroll = 0;
 
       window.addEventListener('scroll', () => {
         const currentScroll = window.pageYOffset;
         
-        // Ubah background navbar saat scroll
         if (currentScroll > 50) {
           navbar.style.background = 'rgba(20, 25, 35, 0.95)';
         } else {
           navbar.style.background = 'rgba(20, 25, 35, 0.9)';
         }
 
-        // Hide/show navbar dengan tetap mempertahankan posisi tengah
         if (currentScroll > lastScroll && currentScroll > 150) {
           navbar.classList.add('hide');
           // Close mobile menu when hiding navbar
@@ -1510,7 +1503,6 @@
         }
         lastScroll = currentScroll;
 
-        // Active link berdasarkan scroll position
         const sections = document.querySelectorAll('section[id], #profile');
         const navLinks = document.querySelectorAll('.nav-links a');
         let currentId = '';
@@ -1530,7 +1522,6 @@
         });
       });
 
-      // Smooth scroll untuk semua link navbar
       document.querySelectorAll('.nav-links a').forEach(link => {
         link.addEventListener('click', function(e) {
           e.preventDefault();
@@ -1545,7 +1536,6 @@
         });
       });
 
-      // Logo click animation
       document.querySelector('.logo-icon').addEventListener('click', function() {
         this.style.transform = 'scale(0.9) rotate(-5deg)';
         setTimeout(() => {
@@ -1553,7 +1543,6 @@
         }, 200);
       });
 
-      // Avatar click animation
       document.querySelector('.avatar-shape').addEventListener('click', function() {
         this.style.transform = 'scale(0.95) rotate(2deg)';
         setTimeout(() => {
@@ -1561,7 +1550,6 @@
         }, 200);
       });
 
-      // Typing effect
       const heroText = document.querySelector('.hero h1');
       if (heroText) {
         const originalText = heroText.textContent;
@@ -1580,3 +1568,4 @@
   </script>
 </body>
 </html>
+
